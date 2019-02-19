@@ -2,20 +2,23 @@ package attraction;
 
 import umans.Visitor;
 
-public class Dodgems extends Attraction {
+public class Dodgems extends Attraction implements ITicketed{
 
-    public Dodgems(String name) {
-        super(name);
+    public Dodgems(String name, int rating) {
+        super(name, rating);
     }
 
     @Override
     public double defaultPrice() {
-        return 0;
+        return 4.50;
     }
 
     @Override
     public double priceFor(Visitor visitor) {
-        return 0;
+        if (visitor.getAge() < 12){
+            return defaultPrice() / 2;
+        }
+        return defaultPrice();
     }
 
 

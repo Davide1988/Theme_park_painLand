@@ -30,4 +30,8 @@ public class Visitor {
     public double getMoney() {
         return money;
     }
+
+    public void payForRide(double ticket){
+        this.money -= ticket;
+    }
 }

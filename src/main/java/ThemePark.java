@@ -1,4 +1,6 @@
 import attraction.Attraction;
+import attraction.Rollercoaster;
+import stall.ISecurity;
 import stall.Stall;
 import umans.Visitor;
 
@@ -25,14 +27,23 @@ public class ThemePark {
         this.stalls.add(stall);
     }
 
-    public int getAttractioncount(){
+    public int getAttractionsCount(){
         return this.attractions.size();
+    }
+
+    public int getStallCount(){
+        return this.stalls.size();
     }
 
 
 
-    public String visit(Attraction attraction, Visitor visitor){
-        return visitor.getName() + " is on " + attraction.getName();
+    public void visit(Rollercoaster rollercoaster, Visitor visitor){
+        if (rollercoaster.isAllowedTo(visitor) == false ){
+            return;
+        }else{
+            visitor.payForRide(rollercoaster.defaultPrice());
+
+        }
     }
 
 

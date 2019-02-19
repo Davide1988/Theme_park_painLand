@@ -4,8 +4,8 @@ import umans.Visitor;
 
 public class TabaccoStall extends Stall implements ISecurity{
 
-    public TabaccoStall(String name, String ownerName, int parkingSpot) {
-        super(name, ownerName, parkingSpot);
+    public TabaccoStall(String name, String ownerName, int parkingSpot, int rating) {
+        super(name, ownerName, parkingSpot, rating);
     }
 
     @Override
@@ -18,5 +18,13 @@ public class TabaccoStall extends Stall implements ISecurity{
     }
 
 
+    @Override
+    public double defaultPrice() {
+        return 6.60;
+    }
 
+    @Override
+    public double priceFor(Visitor visitor) {
+        return 0;
+    }
 }

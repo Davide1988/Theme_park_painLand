@@ -5,19 +5,12 @@ import umans.Visitor;
 
 public class Playground extends Attraction implements ISecurity {
 
-    public Playground(String name) {
-        super(name);
+    public Playground(String name, int rating) {
+        super(name, rating);
     }
 
-    @Override
-    public double defaultPrice() {
-        return 0;
-    }
 
-    @Override
-    public double priceFor(Visitor visitor) {
-        return 0;
-    }
+
 
     @Override
     public boolean isAllowedTo(Visitor visitor) {
@@ -27,4 +20,6 @@ public class Playground extends Attraction implements ISecurity {
             return false;
         }
     }
+
+
 }

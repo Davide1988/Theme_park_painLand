@@ -18,8 +18,8 @@ public class RollercoasterTest {
     @Before
     public void before(){
 
-        rollercoaster = new Rollercoaster("RollyPolly");
-        visitor = new Visitor("Bob", 30, 175, 29);
+        rollercoaster = new Rollercoaster("RollyPolly",3);
+        visitor = new Visitor("Bob", 30, 201, 29);
         visitor1 = new Visitor("Sandy", 5, 175, 29);
         visitor2 = new Visitor("Freddy", 30, 100, 29);
 
@@ -32,4 +32,12 @@ public class RollercoasterTest {
         assertEquals(false, rollercoaster.isAllowedTo(visitor1));
         assertEquals(false, rollercoaster.isAllowedTo(visitor2));
     }
+
+    @Test
+    public void shouldPayDoubleForTallFella(){
+        rollercoaster.priceFor(visitor);
+        assertEquals(12.20, visitor.getMoney(),0.01);
+    }
+
+
 }

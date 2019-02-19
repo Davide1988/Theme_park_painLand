@@ -3,21 +3,25 @@ package attraction;
 import stall.ISecurity;
 import umans.Visitor;
 
-public class Rollercoaster extends Attraction implements ISecurity {
+public class Rollercoaster extends Attraction implements ISecurity,ITicketed {
 
-    public Rollercoaster(String name) {
-        super(name);
+    public Rollercoaster(String name, int rating) {
+        super(name, rating);
     }
 
     @Override
     public double defaultPrice() {
-        return 0;
+        return 8.40;
     }
 
     @Override
     public double priceFor(Visitor visitor) {
-        return 0;
+        if(visitor.getHeight() >= 200) {
+            return defaultPrice() * 2;
+        }
+            return defaultPrice();
     }
+
 
     @Override
     public boolean isAllowedTo(Visitor visitor) {
