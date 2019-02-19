@@ -35,7 +35,7 @@ public class RollercoasterTest {
 
     @Test
     public void shouldPayDoubleForTallFella(){
-        rollercoaster.priceFor(visitor);
+        rollercoaster.charge(visitor);
         assertEquals(12.20, visitor.getMoney(),0.01);
     }
 

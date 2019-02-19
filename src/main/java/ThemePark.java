@@ -1,5 +1,6 @@
 import attraction.Attraction;
 import attraction.Rollercoaster;
+import forall.IReviewed;
 import stall.ISecurity;
 import stall.Stall;
 import umans.Visitor;
@@ -36,15 +37,21 @@ public class ThemePark {
     }
 
 
-
-    public void visit(Rollercoaster rollercoaster, Visitor visitor){
-        if (rollercoaster.isAllowedTo(visitor) == false ){
-            return;
-        }else{
-            visitor.payForRide(rollercoaster.defaultPrice());
-
-        }
+    public ArrayList<IReviewed> getAllReview(){
+        ArrayList review = new ArrayList();
+        return review;
+        
     }
+
+
+//    public void visit(Rollercoaster rollercoaster, Visitor visitor){
+//        if (rollercoaster.isAllowedTo(visitor) == false ){
+//            return;
+//        }else{
+//            visitor.payForRide(rollercoaster.defaultPrice());
+//
+//        }
+//    }
 
 
 

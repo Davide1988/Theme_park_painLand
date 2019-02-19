@@ -22,6 +22,12 @@ public class Rollercoaster extends Attraction implements ISecurity,ITicketed {
             return defaultPrice();
     }
 
+    public void charge(Visitor visitor){
+            double price = priceFor(visitor);
+        double wallet = visitor.getMoney();
+                wallet -= price;
+
+    }
 
     @Override
     public boolean isAllowedTo(Visitor visitor) {
